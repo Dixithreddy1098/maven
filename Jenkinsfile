@@ -12,9 +12,9 @@ pipeline {
             }
         }
         stage('Testing and validating'){
-            when{
+         /*   when{
                 branch 'master'
-            }
+            } */
             steps{
                 sh'''
                 mvn -B -DskipTests clean package
@@ -25,6 +25,8 @@ pipeline {
         }
         stage('Atrifract'){
             steps{
+                input ()
+                message 'The enter proceed option to run the remaining build '
                 archiveArtifacts artifacts: '**/*.war'
                 echo "Creating the Atrifact"
             }
