@@ -1,5 +1,8 @@
 pipeline {
-    agent any 
+    agent any
+    options{
+        timestamps()
+    } 
     stages{
         stage('Downloading the code') {
             steps{
