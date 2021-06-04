@@ -26,7 +26,7 @@ pipeline {
         stage('Atrifract'){
             steps{
                 input ()
-                message 'The enter proceed option to run the remaining build '
+                message: 'The enter proceed option to run the remaining build '
                 archiveArtifacts artifacts: '**/*.war'
                 echo "Creating the Atrifact"
             }
