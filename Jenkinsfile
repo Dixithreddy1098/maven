@@ -12,6 +12,9 @@ pipeline {
             }
         }
         stage('Testing and validating'){
+            when{
+                branch 'master'
+            }
             steps{
                 sh'''
                 mvn -B -DskipTests clean package
